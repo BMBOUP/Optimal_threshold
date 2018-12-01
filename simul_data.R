@@ -1,3 +1,14 @@
+# {{{ inputs description:
+# n          : the sample size you want to simulate
+# scenario   : scenario=1 if you simulate a dataset with constant treatment effect using time-dependent logistic model
+#              scenario=2 if treatment effect in the model is increasing with time
+#              scenario=3 if treatment effect in the model is decreasing with time  
+
+# }}}
+# {{{ outputs description:
+# donne      : a dataframe to one of the scenario.
+# }}}
+
 
 simuldata <- function(n,scenario) {
   # Parametres des simulations 
