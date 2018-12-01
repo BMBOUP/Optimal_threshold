@@ -17,11 +17,9 @@ The function **get_risk** is a function to get risk at a prediction time (timepo
 
 The function **get_censoring_weights** returns the inverse of the probability of censoring weighting. This function help to take the standard decision at a prediction time t. 
 
-
-
 The function **plotime_predictiveness_curve** display the risk of event in treated and untreated subjects.
 
-The **extention_dataset**
+The **extention_dataset_code** is the script using the section 5.3 in the paper to extend the sample size of the real datasetS. 
 
 
 
