@@ -13,9 +13,10 @@ The function **simul_data** is a function to simulated data using three scenario
 - scenario : scenario=1 if constant effect, scenario=2 if increasing effect and scenario=3 if decreasing effect.
 and outputs a data set with 4 variables: time,event, treatment, biomarker.
 
-The function **get_risk** is a function to get risk at a prediction time (timepoint) with treated and untreated subjects. The inputs are the same to **check_effect** also 
+The function **get_risk** is a function to get risk at a prediction time (timepoint) with treated and untreated subjects. The inputs are the same to **check_effect** and varying is boolean input takes true if time-varying treatment effect and false ifelse. The output is dataframe of the risk_0 in untreated subjects and the risk_1 in treated subjects.
 
 
 
 
-Inputs: values - This is a single column matrix and contains values between 0 and 1. classes - This single colomn matrix contains the labels for each of the values mentioned under "values". The labels should just have 2 classes i.e. 0 and 1
+
+
