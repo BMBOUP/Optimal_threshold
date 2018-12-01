@@ -1,12 +1,12 @@
 
 # {{{ input description :
 
-# fitted         : vector of observed failure times
-# delta          : vector of indicator of status (0 for censoring, 1 for type of event one, 2 for type of event two and so on...)
-# marker         : vector ofmarker values
+# fitted         : an object of get_risk
+# timepoint      : the prediction time
+# Marker         : vector of continuous biomarker values
 
+# }}}
 
-## function to display time-dependent marker-by-treatment predictiveness curves
 plotime_predictiveness_curve <- function(fitted,timepoint,Marker){
   xlim <- c(0,100)
   breaks = seq(xlim[1], xlim[2], length.out = 5)
@@ -22,4 +22,4 @@ plotime_predictiveness_curve <- function(fitted,timepoint,Marker){
   axis(2,at=seq(from=0,to=1,by=0.2),labels=seq(from=0,to=1,by=0.2)*100,las=2)
   axis(1,at= breaks, label = round(quantile(x1, prob = breaks/100), 1),pos=-0.26)   
 }
-##}}}
+
