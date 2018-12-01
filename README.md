@@ -19,6 +19,9 @@ The function **get_censoring_weights** returns the inverse of the probability of
 
 
 
-The function **plotime_predictiveness** returns the inverse of the probability of censoring weighting. This function help to take the standard decision at a prediction time t. 
+The function **plotime_predictiveness_curve** display the risk of event in treated and untreated subjects.
+
+The **extention_dataset**
+
 
 
