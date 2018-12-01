@@ -7,7 +7,7 @@
 # weights     : inverse of probability of censored weighting
 # }}}
 
-library(prodlim)
+
 get.censoring.weights <- function(timepoint,time,event){
   untreated <- time >= timepoint 
   censure <- time < timepoint & event==0 
