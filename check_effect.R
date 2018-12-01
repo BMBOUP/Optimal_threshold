@@ -2,7 +2,8 @@
 
 
 ##{{{ check_effect is a function to check the effect of covariate if they are time-varying or not
-Check_effect <- function(time,event,treatment,Marker,data){
+Check_effect <- function(time,event,treatment,Marker){
+    data <- cbind.data.frame(time=time,event=event,treatment=treatment,Marker=Marker)
   estim <- comp.risk(Event(time,event)~treatment+Marker+
                        treatment*Marker,
                      cause=1,
