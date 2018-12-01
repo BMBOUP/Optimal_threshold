@@ -10,7 +10,7 @@
 
 # }}}
 # {{{ output description :
-# risk          : a dataframe which contains rik_0 for untreated subjects and risk_1 for treated
+# risk          : a dataframe which contains two vectors rik_0 for untreated subjects and risk_1 for treated
 # }}}
 
 get_risk <- function(time,event,Treat,Marker,varying,timepoint)
