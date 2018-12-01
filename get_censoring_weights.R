@@ -1,8 +1,8 @@
+# {{{ inputs description :
+# time      :
+# event     :
+# timepoint : prediction time 
 
-
-##{{{ This function give the inverse  inverse probability of censoring weighting
-## timepoint : is the prediction time
-## time and event are  observed time and status of event. 
 library(prodlim)
 get.censoring.weights <- function(timepoint,time,event){
   untreated <- time >= timepoint 
