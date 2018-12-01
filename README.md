@@ -1,2 +1,2 @@
 # Optimal_threshold
- This is R code using in the article.
+ This is the R code using in my work.
