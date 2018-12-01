@@ -1,5 +1,5 @@
 # Optimal threshold
-R-code to choose the optimal threshold of a biomarker using time-depenedent logistic model.
+R-code to display  the time-dependent marker by treatment predictiveness curve  using time-depenedent logistic model.
 
 The function **check_effect** :
 
