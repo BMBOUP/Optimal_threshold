@@ -1,4 +1,4 @@
-# Optimal_threshold
+# Optimal threshold
 R-code to choose the optimal threshold of a biomarker using time-depenedent logistic model.
 
 The function **check_effect** in R takes 4 inputs:
@@ -13,7 +13,8 @@ The function **simul_data** is a function to simulated data using three scenario
 - scenario : scenario=1 if constant effect, scenario=2 if increasing effect and scenario=3 if decreasing effect.
 and outputs a data set with 4 variables: time,event, treatment, biomarker.
 
-The function **get_risk** is 
+The function **get_risk** is a function to get risk at a prediction time (timepoint) with treated and untreated subjects. The inputs are the same to **check_effect** also 
+
 
 
 
