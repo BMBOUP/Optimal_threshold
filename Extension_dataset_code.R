@@ -105,8 +105,11 @@ length(AllTimeCens)
 length(Jumps)
 sum(Jumps)
 MyTcens <- sample(x=c(AllTimeCens,max(d$OS_time)+1),size=n,replace=TRUE,prob=Jumps)
-# the idea is simply that inverting the estimated empirical cumulative distribution function (ecdf) is equivalent to draw censored time, among those observed int the real dataset, whith probability equal to the jump of the Kaplan-Meier estimator of the censoring distribution.
-# becase Kaplan-Meier does not always reach 0, I added the time max(d$OS_time)+1 (beyond the last observed time in the data set), which is drawn with prob 1-sum(jumps). 
+# the idea is simply that inverting the estimated empirical cumulative distribution function (ecdf) is equivalent 
+# to draw censored time, among those observed int the real dataset, whith probability equal to the jump of the Kaplan-Meier 
+# estimator of the censoring distribution.
+# becase Kaplan-Meier does not always reach 0, I added the time max(d$OS_time)+1 (beyond the last 
+# observed time in the data set), which is drawn with prob 1-sum(jumps). 
 
 
 ## Just to Check that it works
