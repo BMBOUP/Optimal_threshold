@@ -1,7 +1,16 @@
 
-##{{{
-## function to get risk on treated and untreated subjects using time dependent logistic model
+# {{{ input description :
 
+# time           : vector of observed failure times
+# event          : vector of indicator of status (0 for censoring, 1 for type of event)
+# marker         : vector of continuous biomarker values
+# varying        : boolean indicator of time-varying treatment effect
+# timepoint      : prediction time
+
+# }}}
+# {{{ output description :
+# risk          : a dataframe which contains rik_0 for untreated subjects and risk_1 for treated
+# }}}
 
 get_risk <- function(time,event,Treat,Marker,varying,timepoint)
 {
@@ -13,7 +22,7 @@ get_risk <- function(time,event,Treat,Marker,varying,timepoint)
   data <- cbind.data.frame(time=time,event=event,Treat=Treat,Marker=Marker)
   
   if(varying==TRUE){
-    
+
     estim <- comp.risk(Event(time,event)~Treat+const(Marker)+
                          const(Treat*Marker),
                        cause=1,
@@ -46,5 +55,3 @@ get_risk <- function(time,event,Treat,Marker,varying,timepoint)
   
   return(risk)
 }
-
-## }}}
