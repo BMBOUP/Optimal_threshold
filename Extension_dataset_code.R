@@ -7,8 +7,7 @@ library(survival)
 library(timereg)
 library(prodlim)
 
-load("GSE14814.randomise.RData")
-d <- GSE14814.randomise
+d <- JBR.10_data
 ## }}}
 
 ## {{{ sample size
