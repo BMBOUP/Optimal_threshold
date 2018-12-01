@@ -3,6 +3,7 @@
 
 # time           : vector of observed failure times
 # event          : vector of indicator of status (0 for censoring, 1 for type of event)
+# Treat          : treatment indicator 1 if treated and 0 others 
 # marker         : vector of continuous biomarker values
 # varying        : boolean indicator of time-varying treatment effect
 # timepoint      : prediction time
