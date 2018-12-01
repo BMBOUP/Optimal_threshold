@@ -1,7 +1,13 @@
 
-##{{{
+# {{{ input description :
+
+# fitted         : vector of observed failure times
+# delta          : vector of indicator of status (0 for censoring, 1 for type of event one, 2 for type of event two and so on...)
+# marker         : vector ofmarker values
+
+
 ## function to display time-dependent marker-by-treatment predictiveness curves
-plotime_predictiveness_curve <- function(fitt,timepoint,Marker){
+plotime_predictiveness_curve <- function(fitted,timepoint,Marker){
   xlim <- c(0,100)
   breaks = seq(xlim[1], xlim[2], length.out = 5)
   k <- length(fitt$risk_0)
