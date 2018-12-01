@@ -19,7 +19,7 @@ The function **get_censoring_weights** returns the inverse of the probability of
 
 The function **plotime_predictiveness_curve** display the risk of event in treated and untreated subjects.
 
-The **extention_dataset_code** is the script using the section 5.3 in the paper to extend the sample size of the real datasetS. 
+The **extention_dataset_code** is the script using the section 5.3 in the paper to extend the sample size of the real datasets. 
 
 
 
