@@ -2,9 +2,9 @@
 This R code makes an easier access to the supplementary material of the papier entitled **on evaluating how well a biomarker can predict treatment response with survival data**.
 
 The function 
-- **check_effect** for checking the treatment effect.
+- **check_effect** is to check if the treatment effect is time-varying.
 
-- **simul_data** is a function to simulated data using three scenarios: constant, increasing and decreasing  effect of treatment. 
+- **simul_data** is a function to simulate data using three scenarios: constant, increasing and decreasing  effect of treatment. 
 
 - **get_risk** is a function to get risk at a prediction time (timepoint) with treated(risk_1) and untreated(risk_1) subjects..
 
