@@ -2,17 +2,17 @@
 This R code makes an easier access to the supplementary material of the papier entitled **On evaluating how well a biomarker can predict treatment response with survival data**.
 
 The functions 
-- **check_effect** for checking 
+- **check_effect** for checking the treatment effect.
 
-The function **simul_data** is a function to simulated data using three scenarios: constant, increasing and decreasing  effect of treatment. 
+- **simul_data** is a function to simulated data using three scenarios: constant, increasing and decreasing  effect of treatment. 
 
-The function **get_risk** is a function to get risk at a prediction time (timepoint) with treated and untreated subjects..
+- **get_risk** is a function to get risk at a prediction time (timepoint) with treated(risk_1) and untreated(risk_1) subjects..
 
-The function **get_censoring_weights** returns the inverse of the probability of censoring weighting. This function help to take the standard decision at a prediction time t. 
+- **get_censoring_weights** returns the inverse of the probability of censoring weighting. This function help to take the standard decision at a prediction time t. 
 
-The function **plotime_predictiveness_curve**  to display time-dependent marker-by-treatment predictiveness curves.
+- **plotime_predictiveness_curve** displays time-dependent marker-by-treatment predictiveness curves.
 
-The **extention_dataset_code** is the script using the section 5.3 in the paper to extend the sample size of the real datasets. 
+- **extention_dataset_code** is the script using in section 5.3 in the paper to extend the sample size of the real datasets. 
 
 
 
