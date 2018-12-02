@@ -1,7 +1,7 @@
 # Optimal threshold
-R-code to display  the time-dependent marker by treatment predictiveness curve  using time-depenedent logistic model.
+This R code makes an easier access to the supplementary material of the papier entitled **On evaluating how well a biomarker can predict treatment response with survival data**.
 
-The function **check_effect** :
+The function **check_effect** 
 
 The function **simul_data** is a function to simulated data using three scenarios: constant, increasing and decreasing  effect of treatment. 
 
