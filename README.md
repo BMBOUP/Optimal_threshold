@@ -1,7 +1,8 @@
 # Optimal threshold
 This R code makes an easier access to the supplementary material of the papier entitled **On evaluating how well a biomarker can predict treatment response with survival data**.
 
-The function **check_effect** 
+The functions 
+- **check_effect** for checking 
 
 The function **simul_data** is a function to simulated data using three scenarios: constant, increasing and decreasing  effect of treatment. 
 
