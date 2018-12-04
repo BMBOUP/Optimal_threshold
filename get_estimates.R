@@ -16,7 +16,7 @@
 # risk_0            : P(D(t)=1|Treat=0,Marker)
 # risk_1            : P(D(t)=1|Treat=1,Marker)
 # }}}
-get_risk <- function(time,event,Treat,Marker,varying,timepoint)
+get_estimates <- function(time,event,Treat,Marker,varying,timepoint)
 {
   if (length(event)!=length(time) | length(Marker)!=length(time)|length(Treat)!=length(time) | length(event)!=length(time))
   {stop("lengths of vector time, event,treatment and Marker have to be equal\n") }
