@@ -1,12 +1,15 @@
 
 # {{{ input description :
-# Object         : an object of get_risk
-# timepoint      : the prediction time
+# Object         : an object of get_estimates
+# timepoint      : the prediction time is same time given in get_estimates
 # Marker         : vector biomarker values
+# }}}
+# {{{ outputs description: 
+# a ti
 
 # }}}
 
-plotime_predictiveness_curve <- function(Object,timepoint,Marker){
+plotime_predictiveness_curve <- function(Object,Marker,timepoint){
   xlim <- c(0,100)
   breaks = seq(xlim[1], xlim[2], length.out = 5)
   k <- length(Object$risk_0)
