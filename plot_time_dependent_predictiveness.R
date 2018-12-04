@@ -4,9 +4,10 @@
 # timepoint      : the prediction time is same time given in get_estimates
 # Marker         : vector biomarker values
 # }}}
-# {{{ outputs description: 
-# a ti
 
+# {{{ outputs description: 
+# a time-dependent predictiveness curve i.e the risk given treatment and biomarker as a function of the quantile of the
+# biomarker
 # }}}
 
 plotime_predictiveness_curve <- function(Object,Marker,timepoint){
