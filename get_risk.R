@@ -1,4 +1,4 @@
-# This function estimate the optimal threshold with confidence intervale, the percentage of subject
+# This function estimate the optimal threshold with confidence interval, the percentage of subject
 # and risk given biomarker and treatment at given prediction time.
 # {{{ input description :
 # time           : vector of observed failure times
@@ -26,7 +26,7 @@ get_risk <- function(time,event,Treat,Marker,varying,timepoint)
   data <- cbind.data.frame(time=time,event=event,Treat=Treat,Marker=Marker)
   
   if(varying==FALSE || missing(varying)) {
-    estim <- comp.risk(Event(time,event)~const(Treat)+const(Marker)+
+    estim <- timereg::comp.risk(Event(time,event)~const(Treat)+const(Marker)+
                                   const(Treat*Marker),
                                 cause=1,
                                 data=data,
@@ -36,7 +36,7 @@ get_risk <- function(time,event,Treat,Marker,varying,timepoint)
                                 model="logistic")
   }
     if(varying==TRUE){
-      estim <- comp.risk(Event(time,event)~Treat+const(Marker)+
+      estim <- timereg::comp.risk(Event(time,event)~Treat+const(Marker)+
                                     const(Treat*Marker),
                                   cause=1,
                                   data=data,
@@ -45,9 +45,9 @@ get_risk <- function(time,event,Treat,Marker,varying,timepoint)
                                   n.sim=1000,
                                   model="logistic")
     }
-  predittreat1 <- predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=1),
+  predittreat1 <- timereg::predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=1),
                                    n.sim=1,times=timepoint)$P1
-  predittreat0<- predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=0),
+  predittreat0<- timereg::predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=0),
                                   n.sim=1,times=timepoint)$P1
   Delta <- predittreat0-predittreat1
   Pneg <- length(Delta[Delta<0])/length(Delta)
@@ -57,8 +57,8 @@ get_risk <- function(time,event,Treat,Marker,varying,timepoint)
     return(quantile(vec,Pneg,names=FALSE))
   }
   
-  result <- boot(data=data$Marker,statistic=f,R=999)
-  ci <- boot.ci(result,conf=0.95, type="norm")
+  result <- boot::boot(data=data$Marker,statistic=f,R=999)
+  ci <- boot::boot.ci(result,conf=0.95, type="norm")
   risk <- list(threshold=round(result$t0,2),
                  confint=paste("(", round(ci$normal[2],2),",",round(ci$normal[3],2),")"),
                     Pneg=(Pneg*100), 
