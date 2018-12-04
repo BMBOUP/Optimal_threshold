@@ -1,18 +1,18 @@
 
-# {{{ input description :
-# Object         : an object of get_estimates
-# timepoint      : the prediction time is same time given in get_estimates
-# Marker         : vector biomarker values
-# }}}
+## {{{ input description :
+## Object         : an object of get_estimates
+## timepoint      : the prediction time is same time given in get_estimates
+## Marker         : vector biomarker values
+## }}}
 
-# {{{ outputs description: 
-# a time-dependent predictiveness curve i.e the risk given treatment and biomarker as a function of the quantile of the
-# biomarker
-# }}}
+## {{{ outputs description: 
+## a time-dependent predictiveness curve i.e the risk given treatment and biomarker as a function of the quantile of the
+## biomarker
+## }}}
 
 plotime_predictiveness_curve <- function(Object,Marker,timepoint){
   xlim <- c(0,100)
-  breaks = seq(xlim[1], xlim[2], length.out = 5)
+  breaks = seq(xlim[1], xlim[2], length.out=5)
   k <- length(Object$risk_0)
   x1<- sort(Marker)
   y1 <- (((1:k)*100)/k)
