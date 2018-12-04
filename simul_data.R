@@ -1,33 +1,26 @@
-# {{{ Simulate right censored survival data with two covariates treatment and biomarker.
-#
-# This function calls \code{survModel}, then adds  covariates and finally calls \code{sim.lvm}.
-#  @title Simulate survival data
-#  @param N sample size
-#  @param ... do nothing
-#  @return data.frame with simulated data
-#  @references Bender, Augustin & Blettner. Generating survival times to simulate Cox proportional hazards models. Statistics in Medicine, 24: 1713-1723, 2005.
-#  @author Thomas Alexander Gerds
-#  @examples
-# 
-
-#
-
+# {{{ Simulate right censored survival data with two covariates treatment and biomarker which follows respectively 
+# bernouilli distribution with probability 1/2 and standard normal distribution. The model based is the time-dependent
+# logistic model: logit(P(D(t)=1|Treat,Y)=log(t/a)+\beta1(t)Treat+beta2(t)Y+beta3(t)Treat*Y with different scenario
+# scenario   : scenario=1 : constant effect 
+#              logit(P(D(t)=1|Treat,Y)=log(t/a)-0.29*Treat+0.6*Y-1.5*Treat*Y 
+#            : scenario=2 :  increasing effect of treatment with time.
+#              logit(P(D(t)=1|Treat,Y)=log(t/a)+beta1(t)*Treat+0.6*Y-1.5*Treat*Y where beta1(t)=-1.24 if t<3 and -0.31 otherwise
+#            : scenario=3 : decreasing treatment effect in the model is  with time  
+#              logit(P(D(t)=1|Treat,Y)=log(t/a)+log(1/(t+1))*Treat+0.6*Y-2*Treat*Y 
+# }}}
 #{{{
 #inputs description:
-# n          : the sample size you want to simulate
-# scenario   : scenario=1 if you simulate a dataset with constant treatment effect using time-dependent logistic model
-#              scenario=2 if treatment effect in the model is increasing with time
-#              scenario=3 if treatment effect in the model is decreasing with time  
+# n          : sample size
+# scenario   : 1,2,3
 
-# }}}
 # {{{ outputs description:
 # donne      : a dataframe to one of the scenario.
 # }}}
 
 
 simuldata <- function(n,scenario) {
-  # Parametres des simulations 
-  myseed <- 123456 # graine
+  #  simulations parameters 
+  myseed <- 123456 # seed
   
   # coefficients of time-dependent logistic model 
   beta2 <- 0.6     # coefficients of biomarkerY
