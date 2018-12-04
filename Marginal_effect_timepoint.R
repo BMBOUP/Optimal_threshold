@@ -42,7 +42,7 @@ Marginal_effecttimepoint<-function(time,event,Treat,timepoint) {
                                        time[Treat==0],
                                       event[Treat==0])
   
-  rho_0 <- sum(w*I(time<timepoint)*(1-Treat))/sum(w*(1-Treat))
+  rho_0 <- sum(w*I(time<timepoint)*(1-Treat))/sum(w*(1-Treat)) 
   return(rho_0-rho_1)
 }
 ##}}}
