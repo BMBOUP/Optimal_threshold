@@ -1,9 +1,6 @@
-# This function estimate the risk given biomarker and treatment at given prediction time 
-# risk_0=P(D(t)=1|Treat=0,Marker) and 
-# risk_1=P(D(t)=1|Treat=1,Marker)
-
+# This function estimate the optimal threshold with confidence intervale, the percentage of subject
+# and risk given biomarker and treatment at given prediction time.
 # {{{ input description :
-
 # time           : vector of observed failure times
 # event          : vector of indicator of status (0=censored, 1=uncensored)
 # Treat          : vector of treatment indicator 1 if treated and 0 others 
