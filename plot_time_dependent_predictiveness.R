@@ -10,7 +10,7 @@
 ## biomarker
 ## }}}
 
-plotime_predictiveness_curve <- function(Object,Marker,timepoint){
+plottime_predictiveness_curve <- function(Object,Marker,timepoint){
   xlim <- c(0,100)
   breaks = seq(xlim[1], xlim[2], length.out=5)
   k <- length(Object$risk_0)
