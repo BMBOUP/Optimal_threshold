@@ -6,7 +6,7 @@
 ## }}}
 
 ## {{{ outputs description: 
-## a time-dependent predictiveness curve i.e the risk given treatment and biomarker 
+## a graphic called time-dependent predictiveness curve i.e the plot of the risk given treatment and biomarker 
 ## as a function of the quantile of the biomarker
 ## }}}
 
