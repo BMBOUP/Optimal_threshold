@@ -45,20 +45,27 @@ get_estimates <- function(time,event,Treat,Marker,varying,timepoint)
                                   n.sim=1000,
                                   model="logistic")
     }
+     # P(D(t)=1|Treat=1,Marker)
   predittreat1 <- timereg::predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=1),
                                    n.sim=1,times=timepoint)$P1
+  
+    #  P(D(t)=1|Treat=0,Marker)
   predittreat0<- timereg::predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=0),
                                   n.sim=1,times=timepoint)$P1
-  Delta <- predittreat0-predittreat1
-  Pneg <- length(Delta[Delta<0])/length(Delta)
-  
+    # absolute effect of treatment at time t, Delta(t)=P(D(t)=1|Treat=0,Marker)-P(D(t)=1|Treat=1,Marker)
+             Delta <- predittreat0-predittreat1
+    # Proportion of subject when Delta(t)<0   that represent the quantile of the biomarker
+    # where the two curves cross 
+      Pneg <- length(Delta[Delta<0])/length(Delta)
+    # this funtion returns the quantile of the biomarker.
   f <- function(data,indice){
     vec=data[indice]
     return(quantile(vec,Pneg,names=FALSE))
   }
-  
+   # bootraps for confidence intervals 
   result <- boot::boot(data=data$Marker,statistic=f,R=999)
   ci <- boot::boot.ci(result,conf=0.95, type="norm")
+  
   risk <- list(threshold=round(result$t0,2),
                  confint=paste("(", round(ci$normal[2],2),",",round(ci$normal[3],2),")"),
                     Pneg=(Pneg*100), 
