@@ -1,7 +1,7 @@
 
 ## {{{ input description :
 ## Object         : an object of get_estimates
-## timepoint      : the prediction time is same time given in **get_estimates**
+## timepoint      : the prediction time is same time given in get_estimates
 ## Marker         : vector biomarker values
 ## }}}
 
