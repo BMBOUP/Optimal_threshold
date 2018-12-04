@@ -1,4 +1,19 @@
-# {{{ inputs description:
+# {{{ Simulate right censored survival data with two covariates treatment and biomarker.
+#
+# This function calls \code{survModel}, then adds  covariates and finally calls \code{sim.lvm}.
+#  @title Simulate survival data
+#  @param N sample size
+#  @param ... do nothing
+#  @return data.frame with simulated data
+#  @references Bender, Augustin & Blettner. Generating survival times to simulate Cox proportional hazards models. Statistics in Medicine, 24: 1713-1723, 2005.
+#  @author Thomas Alexander Gerds
+#  @examples
+# 
+
+#
+
+#{{{
+#inputs description:
 # n          : the sample size you want to simulate
 # scenario   : scenario=1 if you simulate a dataset with constant treatment effect using time-dependent logistic model
 #              scenario=2 if treatment effect in the model is increasing with time
