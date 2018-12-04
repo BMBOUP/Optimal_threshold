@@ -7,8 +7,9 @@
 # weights     : inverse of probability of censored weighting
 # }}}
 
-
-get.censoring.weights <- function(timepoint,time,event){
+Marginal_effecttimepoint<-function(time,event,Treat,timepoint) {
+  w <- rep(0,length(time))
+  get.censoring.weights <- function(timepoint,time,event){
   untreated <- time >= timepoint 
   censure <- time < timepoint & event==0 
   new.times <- time
@@ -20,6 +21,14 @@ get.censoring.weights <- function(timepoint,time,event){
   weights <- prodlim::predict(Fitcens,times=times_sorted)[order]
   weights <- 1/weights
   weights[censure] <- 0 
-  return(weights)
-}
+   return(weights)
+    
+         }
+  w[Treat==1] <- get.censoring.weights(timepoint,time[Treat==1],event[Treat==1])
+  rho_1 <- sum(w*I(time<timepoint)*Treat)/sum(w*Treat)
+  w[Treat==0] <- get.censoring.weights(timepoint,time[Treat==0],event[Treat==0])
+
+  rho_0 <- sum(w*I(time<timepoint)*(1-Treat))/sum(w*(1-Treat))
+  return(rho_0-rho_1)
+  }
 ##}}}
