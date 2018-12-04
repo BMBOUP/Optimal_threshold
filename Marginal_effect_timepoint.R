@@ -1,13 +1,14 @@
-# This function return the marginal treatment effect rho_0(t)-rho_1(t) at time t.
+# This function returns the marginal treatment effect rho_0(t)-rho_1(t) at time t.
 # if positive the standard decision is to treat everybody
 # if negative the standard decision is to avoid treatmentfor everybody
 # {{{ inputs description :
 # time           : vector of observed failure times
 # event          : vector of indicator of status (0 for censoring, 1 for type of event)
-# timepoint : prediction time 
+# Treat          : 1=treated, 0=untreated
+# timepoint      : prediction time 
 # }}}
 # {{{ outputs description :
-# rho_0(t)-rho_1(t)   : the marginal effect of treatment without the biomarker
+# rho_0(t)-rho_1(t)   : the marginal effect of treatment at time t=timepoint  without the biomarker
 # }}}
 
 
