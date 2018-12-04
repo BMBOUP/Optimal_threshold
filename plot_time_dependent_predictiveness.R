@@ -27,6 +27,5 @@ plottime_predictiveness_curve <- function(Object,Marker,timepoint){
      axis(1,at= breaks, label = round(quantile(x1, prob = breaks/100), 1),pos=-0.26) 
      abline(v=Object$Pneg,lty=2)
      legend(10,1, legend=c("Treated"," Untreated"), col=c("blue","red"), lty= c(1,1))
-
-}
+   }
 
