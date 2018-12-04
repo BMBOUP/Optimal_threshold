@@ -6,8 +6,8 @@
 ## }}}
 
 ## {{{ outputs description: 
-## a time-dependent predictiveness curve i.e the risk given treatment and biomarker as a function of the quantile of the
-## biomarker
+## a time-dependent predictiveness curve i.e the risk given treatment and biomarker 
+## as a function of the quantile of the biomarker
 ## }}}
 
 plottime_predictiveness_curve <- function(Object,Marker,timepoint){
