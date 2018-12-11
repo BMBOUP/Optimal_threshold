@@ -5,7 +5,14 @@ The function
 
 - **simul_data** is a function to simulate data using three scenarios: constant, increasing and decreasing  effect of treatment. 
 
-- **get_estimates** is a function to get risk at a prediction time (timepoint) with treated(risk_1) and untreated(risk_1) subjects..
+- **get_estimates** is a function to get at horizon time (timepoint)
+
+   * the optimal threshold (threshold)
+   * the confidence interval of the threshold(confint)
+   * the proportion of subject who avoid or benefict the treatment (Pneg*100)
+   * the risk in treated(risk_1) subjects 
+   * the risk in untreated(risk_0) subjects
+   
 
 - **Marginal_effect_timepoint** returns rho_0(t)-rho_1(t). 
 
