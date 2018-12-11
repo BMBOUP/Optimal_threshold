@@ -5,7 +5,7 @@ The function
 
 - **simul_data** is a function to simulate data using three scenarios: constant, increasing and decreasing  effect of treatment. 
 
-- **get_estimates** is a function to get at horizon time (timepoint)
+- **get_estimates** is a function that estimates at horizon time (timepoint)
 
    * the optimal threshold (threshold)
    * the confidence interval of the threshold(confint)
