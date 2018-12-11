@@ -9,7 +9,7 @@ The function
 
    * the optimal threshold (threshold)
    * the confidence interval of the threshold(confint)
-   * the proportion of subject who avoid or benefict the treatment (Pneg*100)
+   * the proportion of subjects who avoid or benefit the treatment (Pneg*100)
    * the risk in treated(risk_1) subjects 
    * the risk in untreated(risk_0) subjects
    
