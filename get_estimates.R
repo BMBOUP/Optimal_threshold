@@ -54,10 +54,10 @@ get_estimates <- function(time,event,Treat,Marker,varying,timepoint)
                                   n.sim=1,times=timepoint)$P1
     # absolute effect of treatment at time t, Delta(t)=P(D(t)=1|Treat=0,Marker)-P(D(t)=1|Treat=1,Marker)
              Delta <- predittreat0-predittreat1
-    # Proportion of subject when Delta(t)<0   that represent the quantile of the biomarker
+    # Proportion of subject when Delta(t,Y)<0 that represent the quantile of the biomarker
     # where the two curves cross 
       Pneg <- length(Delta[Delta<0])/length(Delta)
-    # this funtion returns the quantile of the biomarker.
+    # this funtion returns the threshold of the biomarker gamma(t).
   f <- function(data,indice){
     vec=data[indice]
     return(quantile(vec,Pneg,names=FALSE))
