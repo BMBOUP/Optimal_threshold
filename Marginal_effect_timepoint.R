@@ -27,7 +27,7 @@ Marginal_effecttimepoint<-function(time,event,Treat,timepoint) {
     ## increasing time 
     times_sorted <- sort(new.times,decreasing=FALSE,method='shell')
     order <- rank(new.times)
-    weights <- prodlim::predict(Fitcens,times=times_sorted)[order]
+    weights <- predict(Fitcens,times=times_sorted)[order]
     weights <- 1/weights
     weights[censure] <- 0 
     return(weights)
