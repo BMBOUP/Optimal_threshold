@@ -36,14 +36,14 @@ Marginal_effecttimepoint<-function(time,event,Treat,timepoint) {
   w[Treat==1] <- get.censoring.weights(timepoint,
                                         time[Treat==1],
                                        event[Treat==1])
-  rho_1 <- sum(w*I(time<timepoint)*Treat)/sum(w*Treat)
+  rho_1 <- sum(w*I(time<timepoint)*Treat)/sum(Treat)
   
   w <- rep(0,length(time))
   w[Treat==0] <- get.censoring.weights(timepoint,
                                        time[Treat==0],
                                       event[Treat==0])
   
-  rho_0 <- sum(w*I(time<timepoint)*(1-Treat))/sum(w*(1-Treat)) 
+  rho_0 <- sum(w*I(time<timepoint)*(1-Treat))/sum((1-Treat)) 
   return(rho_0-rho_1)
 }
 ##}}}
