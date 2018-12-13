@@ -8,7 +8,10 @@ library(prodlim)
 library(boot)
 
 # source the required R functions
-#source("")
+## ------------------------------------------------------------------------
+source("Marginal_effect_timepoint.R")
+source("get_estimates.R")
+source("plot_time_dependent_predictiveness.R")
 ## ------------------------------------------------------------------------
 
 load("JBR.10_data.RData")
@@ -36,7 +39,7 @@ Check_effect(JBR.10_data$OS_time,JBR.10_data$OS_status,JBR.10_data$Treat,
             JBR.10_data$Marquer)
 
 ## ------------------------------------------------------------------------
-source("Marginal_effect_timepoint.R")
+
 
 ## ------------------------------------------------------------------------
 Marginal_effecttimepoint(JBR.10_data$OS_time,JBR.10_data$OS_status,JBR.10_data$Treat,2)
@@ -44,7 +47,7 @@ Marginal_effecttimepoint(JBR.10_data$OS_time,JBR.10_data$OS_status,JBR.10_data$T
 Marginal_effecttimepoint(csl_data$years,csl_data$dc,csl_data$tment,5)
 
 ## ------------------------------------------------------------------------
-source("get_estimates.R")
+
 ## ------------------------------------------------------------------------
 risk1 <- get_estimates(csl_data$years,csl_data$dc,csl_data$tment,
                       csl_data$pro,varying=TRUE,5)
@@ -59,7 +62,7 @@ risk2$confint
 risk2$Pneg
 
 ## ------------------------------------------------------------------------
-source("plot_time_dependent_predictiveness.R")
+
 ## ------------------------------------------------------------------------
 pdf("test1.pdf")
 plotime_predictiveness_curve(Object=risk1,timepoint=5,Marker=csl_data$pro)
