@@ -46,11 +46,11 @@ get_estimates <- function(time,event,Treat,Marker,varying,timepoint)
                                   model="logistic")
     }
      # P(D(t)=1|Treat=1,Marker)
-  predittreat1 <- timereg::predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=1),
+  predittreat1 <- predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=1),
                                    n.sim=1,times=timepoint)$P1
   
     #  P(D(t)=1|Treat=0,Marker)
-  predittreat0<- timereg::predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=0),
+  predittreat0<- predict(estim,newdata=data.frame(Marker=sort(Marker),Treat=0),
                                   n.sim=1,times=timepoint)$P1
     # absolute effect of treatment at time t, Delta(t)=P(D(t)=1|Treat=0,Marker)-P(D(t)=1|Treat=1,Marker)
              Delta <- predittreat0-predittreat1
