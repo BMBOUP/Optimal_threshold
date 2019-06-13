@@ -65,8 +65,8 @@ risk2$Pneg
 
 ## ------------------------------------------------------------------------
 pdf("test1.pdf")
-plotime_predictiveness_curve(Object=risk1,timepoint=5,Marker=csl_data$pro)
-plotime_predictiveness_curve(Object=risk2,timepoint=2,Marker=JBR.10_data$Marquer)
+plottime_predictiveness_curve(Object=risk1,timepoint=5,Marker=csl_data$pro)
+plottime_predictiveness_curve(Object=risk2,timepoint=2,Marker=JBR.10_data$Marquer)
 dev.off()
 
 ## ------------------------------------------------------------------------
